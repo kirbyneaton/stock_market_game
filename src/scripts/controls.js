@@ -4,6 +4,7 @@ class Controls {
         this.ele.innerHTML = "<h1>Sell</h1>"
         this.handleClick = this.handleClick.bind(this)
         this.ele.addEventListener("click", this.handleClick)
+        
     }
 
 
