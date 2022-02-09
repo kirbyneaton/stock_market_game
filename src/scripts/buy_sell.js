@@ -1,3 +1,5 @@
+import Graph from './graph'
+
 class BuySell {
     constructor(ele){
         this.ele = ele
@@ -9,7 +11,8 @@ class BuySell {
 
 
     handleClick(){
-        this.ele.children[0].innerText = "Buy"
+        this.ele.children[0].innerText = "Sold!";
+        console.log(Graph.prototype.setSold(true));
     }
 }
 

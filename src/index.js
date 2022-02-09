@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttonStart = document.getElementById("button-start")
     new Start(buttonStart)
     const graph = document.getElementById("graph")
-    let newGraph = new Graph(graph)
+    new Graph(graph)
     
 
     // getData();

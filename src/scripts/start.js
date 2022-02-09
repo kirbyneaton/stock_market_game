@@ -2,7 +2,6 @@ import Graph from './graph'
 
 class Start {
     constructor(ele) {
-
         this.ele = ele;
         this.ele.innerHTML = "<h1>Start</h1>";
         this.handleClick = this.handleClick.bind(this);

@@ -10,6 +10,7 @@ class Graph {
         this.y;
         this.score;
         this.started;
+        this.sold;
         
         
         this.timer = setInterval(this.draw.bind(this), 100);
@@ -45,10 +46,12 @@ class Graph {
                 .x((d) => { return this.x(d["date"]); })
                 .y((d) => { return this.y(d["price"]); })
             );
-        
-        this.updateScore();
+        if (!this.sold){
+            this.updateScore();
+        }
         this.i += 1;
-        console.log(this.data);
+        // return this.i;
+        console.log(this.i);
         };
     }
 
@@ -56,6 +59,18 @@ class Graph {
         this.score = this.data[this.i]["price"];
         const score = document.getElementById("score");
         score.innerHTML = this.score;
+    }
+
+    getSold(){
+        this.sold = false;
+        return this.sold;
+    }
+    setSold(boolean){
+        this.getSold();
+        console.log(this.sold);
+        this.sold = boolean;
+        console.log(this.sold);
+        return this.sold;
     }
 
     async setupGraph(){
@@ -137,7 +152,7 @@ export default Graph;
 // old api
 // https://sandbox.iexapis.com/stable/stock/AAPL/quote?token=Tpk_23574522c6f647ef96d53c57caf6bc25
 
-
+//data for testing
 function getCsv(){
     let csvData =
         [
