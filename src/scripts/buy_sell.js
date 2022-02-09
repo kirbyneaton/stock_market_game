@@ -1,4 +1,4 @@
-class Controls {
+class BuySell {
     constructor(ele){
         this.ele = ele
         this.ele.innerHTML = "<h1>Sell</h1>"
@@ -13,4 +13,4 @@ class Controls {
     }
 }
 
-export default Controls;
+export default BuySell;

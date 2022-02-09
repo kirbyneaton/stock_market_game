@@ -1,25 +1,40 @@
 class Graph {
-    constructor(){
-        
+    constructor(graph){
+        this.graph = graph;
         this.i = 0;
         this.graphContainer;
         this.setupGraph();
         this.data = [];
-        this.test();
+        this.draw();
         this.x;
         this.y;
         this.score;
+        this.started;
         
         
-        this.timer = setInterval(this.test.bind(this),100);
+        this.timer = setInterval(this.draw.bind(this), 100);
+        
     }
 
-    async test(){
+    getStarted(){
+        this.started = false;
+        return this.started;
+    }
+    setStarted(boolean){
+        this.getStarted();
+        console.log(this.started);
+        this.started = boolean;
+        console.log(this.started);
+        return this.started;
+    }
+
+    async draw(){
         
         if (this.graphContainer === undefined){ return };
         if (this.i >= 251){
             clearInterval(this.timer);
-        }
+        };
+        if (this.started){
         this.graphContainer.append("path")
             .datum([this.data[this.i], this.data[this.i + 1]])
             .attr("stroke", "steelblue")
@@ -34,7 +49,7 @@ class Graph {
         this.updateScore();
         this.i += 1;
         console.log(this.data);
-        
+        };
     }
 
     updateScore(){
