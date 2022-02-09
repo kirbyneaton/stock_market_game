@@ -4,9 +4,11 @@ import Graph from './scripts/graph'
 
 document.addEventListener("DOMContentLoaded", () => {
     const main = document.getElementById("main")
-    new Controls('main')
+    new Controls(main)
     const graph = document.getElementById("graph")
-    new Graph("graph")
+    new Graph(graph)
+    
+
     // getData();
 })
 

@@ -8,6 +8,8 @@ class Graph {
         this.test();
         this.x;
         this.y;
+        this.score;
+        
         
         this.timer = setInterval(this.test.bind(this),100);
     }
@@ -29,21 +31,22 @@ class Graph {
                 .y((d) => { return this.y(d["price"]); })
             );
         
+        this.updateScore();
         this.i += 1;
         console.log(this.data);
         
     }
 
+    updateScore(){
+        this.score = this.data[this.i]["price"];
+        const score = document.getElementById("score");
+        score.innerHTML = this.score;
+    }
+
     async setupGraph(){
-        // const body = document.body;
-        // const div = document.createElement("div");
-        // // div.innerText = chart;
-        // // getData();
-        // body.append(div);
-        // // div.setAttribute("id", "graph");
-        // const svg = document.getElementById('graph')
         
         this.data = await getData();
+        this.score = this.data[0]["price"];
         
 
         this.graphContainer = d3.select("#graph")
@@ -58,6 +61,9 @@ class Graph {
         this.graphContainer.append("g").attr("transform", "translate(50,0)").call(d3.axisLeft(this.y));
 
     }
+
+ 
+
 }
 
 
