@@ -1,41 +1,86 @@
-# Stock Market Game
-Think you can time the market to grow your money faster? This game lets the player (not) put thier money where their mouth is and see how their money would've grown if they had gotten into/out of the market at the specified times. The rules are easy--just buy and sell whenever you feel the market is ripe and see how your skills compare to a simple buy and hold approach. Did you beat the market?
+# Overview
 
-# Functionality & MVPs
+Think you can time the market to grow your money faster? This game simulates how a player's money would compare to a market index if they had instead elected to sell and get out of the market at a specified time. The game is meant to illustrate the difficulty of consistently timing the market well, the pitfalls of hindsight bias, and the philosophy pioneered by Vanguard founder, Jack Bogle, which preached investment over speculation.
 
-In Stock Market Game, players will be able to:
-- Start and reset the game
-- Use the keyboard/mouse to toggle the buy and sell button in order to get into (value of their money will follow the index) or out of (value will not change) the market
-- Choose from different market indices (Dow Jones, S&P 500) to "play against"
-- Choose additional settings such as the background theme, audio tracks/sound effects, and speed/length of gameplay
+The rules are easy: click the start button to begin investing and then click the sell button whenever you feel the market is ripe to see how your market-timing skills compare in the long-run against a simple buy and hold approach. Did you beat the market?
 
-In addition, this project will include:
-- An About page detailing the thesis of the game, meant to illustrate the difficulty of consistently timing the market well, the pitfalls of hindsight bias, and the philosophy pioneered by Vanguard founder, Jack Bogle, which preached investment over speculation
-- A production README
+<a href="https://kirbyneaton.github.io/stock_market_game/">Live Site</a>
 
-# Wireframes
+# Table of Contents
+- [Overview](#overview)
+- [Functionality and MVPs](#functionality-and-mvps)
+- [Technologies, Libraries, APIs](#technologies-libraries-apis)
+- [Core Features](#core-features)
+- [Future Directions](#future-directions)
 
-<img width="799">
+# Functionality and MVPs
+
+In Ride the Bull, players are able to:
+- Open a "How to Play" overlay with instructions and click Start to begin the game
+- See the value of their money as it follows the market index
+- Sell and freeze the value of their portfolio to compare against the market when time is up
 
 # Technologies, Libraries, APIs 
 
-This project will be implemented with the following technologies:
-- Financial data from APIs, including [https://iexcloud.io/]
+This project was implemented with the following technologies:
+- Financial data from APIs, including [https://twelvedata.com/] and [https://www.marketwatch.com/]
 - Webpack to bundle the source JavaScript code
 - D3 to display the price graph
 
-# Implementation Timeline
+# Core Features
 
-- Friday afternoon & Weekend: Set up project skeleton, webpack, and render graph using D3 for the main component of gameplay. Successfully connect financial data API.
-- Monday: Implement core functionality such as the buy/sell button, main menu nav, and user control options.
-- Tuesday: Begin CSS styling, and fix any API/D3 issues. If time, begin implementing additional features, such as background themes and audio.
-- Wednesday: Focus on CSS styling, animations, and making it beautiful and intuitive to the user. If time, implement bonuses, like additional data sources.
+- Feature 1: Clicking Start button animates the graph, tracking realtime coordnates
+```javascript
+this.timer = setInterval(this.draw.bind(this), 80);
+```
+```javascript
+async draw(){
+        
+        if (this.graphContainer === undefined){ return };
+        if (this.i >= 251){
+            clearInterval(this.timer);
+        };
+        if (this.started){
+        this.graphContainer.append("path")
+            .datum([this.data[this.i], this.data[this.i + 1]])
+            .attr("stroke", "#1aaab2")
+            .attr("stroke-width", 1.5)
+            .attr("fill", "none")
+            .attr("transform", "translate(50,40)")
+            .attr("d", d3.line()
+                .x((d) => { return this.x(d["date"]); })
+                .y((d) => { return this.y(d["price"]); })
+            );
+        if (!this.sold){
+            this.updateScore();
+        }
+        this.updateMarketValue();
+        this.updateDiff();
+        this.i += 1;
+        };
+    }
+```
 
-# Bonus Features
+- Feature 2: Clicking Sell button stops the user's score from tracking the market and begins calculating the difference
+```javascript
+if (!this.sold){
+            this.updateScore();
+        }
+```
+```javascript
+ updateScore(){
+        this.score = this.data[this.i]["price"];
+        const score = document.getElementById("score");
+        score.innerHTML = this.score;
+    }
+```
 
-- Include crypto data as an option
-- Allow players to pause the game
-- Create custom speed/length of gameplay options
+# Future Directions
+
+- Visually indicate the "Sell" on the graph
+- Allow for multiple buy/sell cycles
+- Be able to choose from different market indices (Dow Jones, S&P 500, crypto) to "play against"
+- Be able to choose additional settings such as audio tracks/sound effects, and speed/length of gameplay
 
 
 
