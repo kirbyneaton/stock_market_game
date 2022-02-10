@@ -12,6 +12,7 @@ class BuySell {
 
     handleClick(){
         this.ele.children[0].innerText = "Sold!";
+        return Graph.prototype.setSold(true);
     }
 }
 

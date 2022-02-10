@@ -34,7 +34,7 @@ main .button {
     margin: 5px;
     padding: 5px;
     font-family: 'Rubik', sans-serif;
-    font-size: 36px;
+    font-size: 34px;
     border-radius: 5px;
     background-color: white;
     opacity: .95;
@@ -78,16 +78,15 @@ main #metrics-container {
 label{
     float: left;
     width: fit-content;
-    margin-right: 2px;
     margin: 3px 15px;
     font-family: 'Rubik', sans-serif;
     color: white;
-
+    font-size: 18px;
 }
 
 .metrics {
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     display: inline-block;
     width: fit-content;
     text-align: center;
