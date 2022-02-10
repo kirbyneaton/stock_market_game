@@ -65,24 +65,34 @@ main .button:active {
 }
 
 main #metrics-container {
-    text-align: center;
-    border: 1px solid yellowgreen;
+    display: flex;
+    justify-content: center;
+    background-color: #ef9833;
+    width: 55%;
+    margin: 0 auto;
+    box-shadow: 3px 3px 2px grey;
+    border-radius: 5px;
+  
 }
 
 label{
-    background: violet;
     float: left;
     width: fit-content;
     margin-right: 2px;
-    
+    margin: 3px 15px;
+    font-family: 'Rubik', sans-serif;
+    color: white;
 
 }
 
 .metrics {
-    background-color: beige;
+    color: white;
+    font-size: 16px;
     display: inline-block;
     width: fit-content;
     text-align: center;
+    margin: 3px;
+    font-family: 'Rubik', sans-serif;
 }
 
 #graph {
@@ -94,6 +104,7 @@ label{
     margin-right: auto;
     width: 67%;
     border-radius: 10px;
+    margin-top: 3px;
 }
 
 svg {
@@ -116,7 +127,7 @@ header{
     
 }
 #null-ele{
-    width: 12%;
+    width: 12.5%;
 }
 
 
@@ -134,7 +145,6 @@ header h1{
     display: inline;
     margin: auto;
 
-    
 }
 
 header nav{
