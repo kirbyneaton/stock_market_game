@@ -27,6 +27,10 @@ header h1{
 
 }
 
+span {
+    color: #ef9833;
+}
+
 header nav{
     float: right;
     font-family: 'Rubik', sans-serif;

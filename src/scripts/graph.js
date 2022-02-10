@@ -15,7 +15,7 @@ class Graph {
         this.sold;
         
         
-        this.timer = setInterval(this.draw.bind(this), 100);
+        this.timer = setInterval(this.draw.bind(this), 80);
         
     }
 

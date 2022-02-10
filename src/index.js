@@ -11,7 +11,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const graph = document.getElementById("graph")
     new Graph(graph)
     
+    //modal
+    const modal = document.getElementById("modal");
+    const aboutButton = document.getElementById("about");
+    const closeButton = document.getElementsByClassName("modal-close")[0];
+    aboutButton.onclick = function() {
+        modal.style.display = "block";
+    }
+    closeButton.onclick =  function (){
+        modal.style.display = "none";
+    }
 
-    // getData();
 })
 
