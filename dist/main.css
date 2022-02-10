@@ -1,6 +1,184 @@
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/reset.css ***!
+  \****************************************************************************************************/
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+body{
+  background-image: url(../images/money-pattern-vector-1685175.jpeg);
+}
 /*!***************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/test.css ***!
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/main.css ***!
   \***************************************************************************************************/
+main > div:first-of-type {
+    text-align: center;
+}
+
+main .button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 36px;
+    border-radius: 5px;
+    background-color: white;
+    opacity: .95;
+    width: 115px;
+    text-align: center;
+    vertical-align: top;
+}
+
+main .button:hover{
+    background-color: #f3f3ed;
+    box-shadow: 3px 3px 2px grey;
+}
+
+main .button:active {
+    background-color: lightgray;
+    box-shadow: inset 0px 0px 5px grey;
+    margin: 7px 5px 3px 5px;
+}
+
+
+#button-start {
+    color: rgb(60, 196, 26);
+    border: 3px solid rgb(60, 196, 26);
+}
+#button-buy-sell {
+    color: rgb(207, 53, 33);
+    border: 3px solid rgb(207, 53, 33);
+}
+
+main #metrics-container {
+    text-align: center;
+    border: 1px solid yellowgreen;
+}
+
+label{
+    background: violet;
+    float: left;
+    width: fit-content;
+    margin-right: 2px;
+    
+
+}
+
+.metrics {
+    background-color: beige;
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+}
+
+#graph {
+    background-color: white;
+    opacity: .95;
+    box-shadow: 3px 3px 2px grey;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 67%;
+    border-radius: 10px;
+}
+
+svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/header.css ***!
+  \*****************************************************************************************************/
+header{
+    
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    
+}
+#null-ele{
+    width: 12%;
+}
+
+
+header h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 48px;
+    color: #1aaab2;
+    border: 6px solid #1aaab2;
+    font-weight: 700;
+    background-color: white;
+    opacity: .95;
+    width: 35%; 
+    border-radius: 10px;
+    padding: 2px;
+    display: inline;
+    margin: auto;
+
+    
+}
+
+header nav{
+    float: right;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    color: #ef9833;
+    background-color: white;
+    opacity: .95;
+    border-radius: 10px;
+    border: 3px solid #ef9833;
+    cursor: pointer;
+    margin: 12px;
+    padding: 5px 15px;
+    vertical-align: top;
+    
+}
+
+header nav:hover {
+    background-color: #f3f3ed;
+    box-shadow: 3px 3px 2px grey;
+}
+
+main .button:active {
+    background-color: lightgray;
+    box-shadow: inset 0px 0px 5px grey;
+    margin: 7px 5px 3px 5px;
+}
+/*!*****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./src/styles/footer.css ***!
+  \*****************************************************************************************************/
+ul{ 
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    color: white;
+    font-size: 62px;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 35px;
+}
+
 
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!

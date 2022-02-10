@@ -1,0 +1,78 @@
+main > div:first-of-type {
+    text-align: center;
+}
+
+main .button {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 36px;
+    border-radius: 5px;
+    background-color: white;
+    opacity: .95;
+    width: 115px;
+    text-align: center;
+    vertical-align: top;
+}
+
+main .button:hover{
+    background-color: #f3f3ed;
+    box-shadow: 3px 3px 2px grey;
+}
+
+main .button:active {
+    background-color: lightgray;
+    box-shadow: inset 0px 0px 5px grey;
+    margin: 7px 5px 3px 5px;
+}
+
+
+#button-start {
+    color: rgb(60, 196, 26);
+    border: 3px solid rgb(60, 196, 26);
+}
+#button-buy-sell {
+    color: rgb(207, 53, 33);
+    border: 3px solid rgb(207, 53, 33);
+}
+
+main #metrics-container {
+    text-align: center;
+    border: 1px solid yellowgreen;
+}
+
+label{
+    background: violet;
+    float: left;
+    width: fit-content;
+    margin-right: 2px;
+    
+
+}
+
+.metrics {
+    background-color: beige;
+    display: inline-block;
+    width: fit-content;
+    text-align: center;
+}
+
+#graph {
+    background-color: white;
+    opacity: .95;
+    box-shadow: 3px 3px 2px grey;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 67%;
+    border-radius: 10px;
+}
+
+svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+

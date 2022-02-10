@@ -1,0 +1,56 @@
+header{
+    
+    display: flex;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    
+}
+#null-ele{
+    width: 12%;
+}
+
+
+header h1{
+    font-family: 'Rubik', sans-serif;
+    font-size: 48px;
+    color: #1aaab2;
+    border: 6px solid #1aaab2;
+    font-weight: 700;
+    background-color: white;
+    opacity: .95;
+    width: 35%; 
+    border-radius: 10px;
+    padding: 2px;
+    display: inline;
+    margin: auto;
+
+    
+}
+
+header nav{
+    float: right;
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    color: #ef9833;
+    background-color: white;
+    opacity: .95;
+    border-radius: 10px;
+    border: 3px solid #ef9833;
+    cursor: pointer;
+    margin: 12px;
+    padding: 5px 15px;
+    vertical-align: top;
+    
+}
+
+header nav:hover {
+    background-color: #f3f3ed;
+    box-shadow: 3px 3px 2px grey;
+}
+
+main .button:active {
+    background-color: lightgray;
+    box-shadow: inset 0px 0px 5px grey;
+    margin: 7px 5px 3px 5px;
+}

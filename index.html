@@ -12,23 +12,46 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <script src="./dist/main.js"></script>
     <title>Stock Market Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cbfe743bf8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        
-        <h1>Stock Market Game</h1>
+        <div id="null-ele"></div>
+        <h1>Ride the Bull <i class="fa-solid fa-hat-cowboy-side"></i></h1>
+        <nav>How to Play</nav>
     </header>
+
     <main>
-        <div id="button-start"></div>
-        <div id="button-buy-sell"></div>
-        <div id="score"></div>
-        <div id="market-value"></div>
-        <!-- <svg id="graph" width="960" heigh="500"></svg> -->
+        <div>
+            <button class="button" id="button-start"></button>
+            <button class="button" id="button-buy-sell"></button>
+        </div>
+        <div id="metrics-container">
+            <label for="score">Portfolio Value: $</label>
+            <div class="metrics" id="score">0</div>
+    
+            <label for="market-value">Market Value: $</label>
+            <div class="metrics" id="market-value">0</div>
+    
+            <label for="value-diff">Return Against Index: $</label>
+            
+            <div class="metrics" id="value-diff">0</div>
+        </div>
+        
         <div id="graph"></div>
 
     </main>
-
+    <footer>
+        <ul>
+            <li><a href="https://github.com/kirbyneaton" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/kirbyneaton/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://angel.co/u/kirby-neaton" target="_blank"><i class="fa-brands fa-angellist"></i></a></li>
+        </ul>
+    </footer>
    
 </body>
 

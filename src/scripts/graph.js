@@ -9,6 +9,8 @@ class Graph {
         this.x;
         this.y;
         this.score;
+        this.marketValue;
+        this.diff;
         this.started;
         this.sold;
         
@@ -38,10 +40,10 @@ class Graph {
         if (this.started){
         this.graphContainer.append("path")
             .datum([this.data[this.i], this.data[this.i + 1]])
-            .attr("stroke", "steelblue")
+            .attr("stroke", "#1aaab2")
             .attr("stroke-width", 1.5)
             .attr("fill", "none")
-            .attr("transform", "translate(50,0)")
+            .attr("transform", "translate(50,40)")
             .attr("d", d3.line()
                 .x((d) => { return this.x(d["date"]); })
                 .y((d) => { return this.y(d["price"]); })
@@ -49,6 +51,8 @@ class Graph {
         if (!this.sold){
             this.updateScore();
         }
+        this.updateMarketValue();
+        this.updateDiff();
         this.i += 1;
         // return this.i;
         console.log(this.i);
@@ -73,44 +77,39 @@ class Graph {
         return this.sold;
     }
 
+    updateMarketValue() {
+        this.marketValue = this.data[this.i]["price"];
+        const marketValue = document.getElementById("market-value");
+        marketValue.innerHTML = this.marketValue;
+    }
+
+    updateDiff() {
+        this.diff = Number.parseFloat(this.score - this.marketValue).toFixed(2);
+        const diff = document.getElementById("value-diff");
+        diff.innerHTML = this.diff;
+    }
+    
+
     async setupGraph(){
         
         this.data = await getData();
         this.score = this.data[0]["price"];
         
-
+        
         this.graphContainer = d3.select("#graph")
             .append("svg")
-            .attr("width", 500)
-            .attr("height", 500);
+            .attr("width", 900)
+            .attr("height", 500)
 
-        this.x = d3.scaleTime().domain(d3.extent(this.data, function(d) {return d["date"]})).range([0, 400]);
-        this.graphContainer.append("g").attr("transform", "translate(50,400)").call(d3.axisBottom(this.x));
+        this.x = d3.scaleTime().domain(d3.extent(this.data, function(d) {return d["date"]})).range([0, 820]);
+        this.graphContainer.append("g").attr("transform", "translate(50,440)").call(d3.axisBottom(this.x));
 
-        this.y = d3.scaleLinear().domain([5000,3500]).range([0, 400]);
-        this.graphContainer.append("g").attr("transform", "translate(50,0)").call(d3.axisLeft(this.y));
-
+        this.y = d3.scaleLinear().domain([5000,3000]).range([0, 400]);
+        this.graphContainer.append("g").attr("transform", "translate(50,40)").call(d3.axisLeft(this.y));
     }
-
- 
-
 }
 
 
-
-// function animateLine() {
-//     return console.log(getData());
-    
-//     // return function(t){
-//     //     return line(datePrice.slice(start,end));
-//     // } 
-// };
-
-// function incrementProgress(){
-//     return progress += 1;
-// }
-
-// const fakeData = [[1, 1], [2, 2], [3, 3], [4, 4]];
 
 function formatDate(datestr) {
     return d3.timeParse("%Y-%m-%d")(datestr);
@@ -129,22 +128,8 @@ async function getData() {
 }
 
 
-getData().then(ele => {
-    
-    console.log(ele);
-    
-    // document.getElementById("graph").textContent = close;
-    // document.getElementById('graph') = URL.createObjectURL(data);
-    
-});
-
-
-
-
 
 export default Graph;
-
-
 
 // API:
 // 'https://api.twelvedata.com/time_series?apikey=1d5e9b5c56104912ab90d8f25ca9a8e3&interval=1day&symbol=GSPC&country=United States&type=index&dp=2&start_date=2021-01-01 15:19:00&end_date=2021-12-31 15:19:00&format=JSON&previous_close=true&outputsize=366';
