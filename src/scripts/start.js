@@ -11,12 +11,9 @@ class Start {
 
 
     handleClick() {
-        // this.ele.children[0].innerText = "Buy";
-        // console.log(Graph.prototype.setStarted(true));
         
         return Graph.prototype.setStarted(true);
         
-
     }
 }
 

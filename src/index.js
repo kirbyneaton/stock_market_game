@@ -1,7 +1,6 @@
 import BuySell from './scripts/buy_sell'
 import Start from './scripts/start'
 import Graph from './scripts/graph'
-// import {getData} from './scripts/data'
 
 document.addEventListener("DOMContentLoaded", () => {
     const buttonBuySell = document.getElementById("button-buy-sell")

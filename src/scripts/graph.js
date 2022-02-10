@@ -14,9 +14,7 @@ class Graph {
         this.started;
         this.sold;
         
-        
         this.timer = setInterval(this.draw.bind(this), 80);
-        
     }
 
     getStarted(){
@@ -25,9 +23,7 @@ class Graph {
     }
     setStarted(boolean){
         this.getStarted();
-        console.log(this.started);
         this.started = boolean;
-        console.log(this.started);
         return this.started;
     }
 
@@ -54,8 +50,6 @@ class Graph {
         this.updateMarketValue();
         this.updateDiff();
         this.i += 1;
-        // return this.i;
-        console.log(this.i);
         };
     }
 
@@ -71,9 +65,7 @@ class Graph {
     }
     setSold(boolean){
         this.getSold();
-        console.log(this.sold);
         this.sold = boolean;
-        console.log(this.sold);
         return this.sold;
     }
 
@@ -128,14 +120,11 @@ async function getData() {
 }
 
 
-
 export default Graph;
 
 // API:
 // 'https://api.twelvedata.com/time_series?apikey=1d5e9b5c56104912ab90d8f25ca9a8e3&interval=1day&symbol=GSPC&country=United States&type=index&dp=2&start_date=2021-01-01 15:19:00&end_date=2021-12-31 15:19:00&format=JSON&previous_close=true&outputsize=366';
 
-// old api
-// https://sandbox.iexapis.com/stable/stock/AAPL/quote?token=Tpk_23574522c6f647ef96d53c57caf6bc25
 
 //data for testing
 function getCsv(){
